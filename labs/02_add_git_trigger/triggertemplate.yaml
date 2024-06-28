@@ -22,9 +22,9 @@ spec:
         serviceAccountName: pipeline
         pipelineRef: 
           name: cd-pipeline
-          params:
-            - name: repo-url
-              value: $(tt.params.repository)
-            - name: branch
-              value: $(tt.params.branch)
+        params:
+          - name: repo-url
+            value: $(tt.params.repository)
+          - name: branch
+            value: $(tt.params.branch)
           
