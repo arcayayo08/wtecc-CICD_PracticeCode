@@ -5,7 +5,7 @@ metadata:
 spec:
   params:
     - name: repository
-      value: '$(body.repository.url)'
+      value: $(body.repository.url)
     - name: branch
-      value: '$(body.ref)'
+      value: $(body.ref)
 
