@@ -3,6 +3,8 @@ kind: Pipeline
 metadata:  
   name: cd-pipeline
 spec:
+  workspaces:
+    - name: pipeline-workspace
   params:
     - name: repo-url
     - name: branch
@@ -10,9 +12,12 @@ spec:
   tasks:
     - name: clone
       taskRef:
-        name: checkout
+        name: git-clone
+      workspaces:
+        - name: outout
+          workspace: pipeline-workspace
       params:
-      - name: repo-url
+      - name: url
         value: "$(params.repo-url)"
       - name: branch
         value: "$(params.branch)"
